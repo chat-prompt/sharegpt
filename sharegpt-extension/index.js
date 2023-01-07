@@ -1,4 +1,3 @@
-
 function createBtn() {
   const button = document.createElement("button");
 
@@ -33,5 +32,12 @@ function createBtn() {
   }
 
   appendShareButton();
+
+  translateButton.addEventListener('click', async () => {
+
+    chrome.runtime.sendMessage({
+      query: 'translate'
+    })
+  });
 
 })();
